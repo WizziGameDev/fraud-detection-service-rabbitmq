@@ -1,1 +1,1 @@
-# fraud-detection-service-rabbitmq
+# Fraud Detection Service
