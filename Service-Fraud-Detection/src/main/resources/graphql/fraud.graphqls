@@ -1,0 +1,29 @@
+scalar Long
+scalar NonNegativeFloat
+
+type FraudDetectionListResponse{
+    id: Int,
+    transactionalCode: String,
+    isFraud: Boolean,
+    checkedAt: Long
+    transactionCreated: Long
+    reason: String
+}
+
+type FraudDetectionResponse {
+    id: Int,
+    transactionalCode: String,
+    reason: String,
+    isFraud: Boolean,
+    checkedAt: Long,
+    totalPrice: NonNegativeFloat,
+    channel: String,
+    userIp: String,
+    deviceName: String,
+    location: String
+}
+
+type Query {
+    frauds: [FraudDetectionListResponse]
+    fraudById(id: Int): FraudDetectionResponse
+}
